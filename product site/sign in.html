@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/sign in.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="log">
+      <section class="input-content">
+        <div class="input">
+          <h1>Log In</h1>
+          <input type="email" placeholder="Enter Your E-mail" />
+          <br />
+          <input type="password" placeholder="Password" />
+          <br />
+          <button id="login">Login</button>
+          <!-- <font-awesome-icon icon="fa-brands fa-google" /> -->
+          <!-- <i class="fa-brands fa-google"></i> -->
+          <a href="#" class="fa fa-facebook"></a>
+          <p><router-link to="/about">Forget Password</router-link></p>
+        </div>
+      </section>
+    </div>
+    <script>
+      function login() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const data = { email, password };
+
+        fetch("http://enactus01-001-site1.etempurl.com/api/User/Login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Success, do something
+            } else {
+              // Error, handle it
+            }
+          })
+          .catch((error) => {
+            // Network error, handle it
+          });
+      }
+      var newUrl = "/product.html";
+      window.location.href = newUrl;
+
+      // const clickLogin = document.getElementById("login");
+
+      // for (let i = 0; i < clickLogin.length; i++) {
+      //   clickLogin[i].addEventListener("click", function () {
+      //     window.location.href = "/product.html";
+      //   });
+      // }
+    </script>
+  </body>
+</html>

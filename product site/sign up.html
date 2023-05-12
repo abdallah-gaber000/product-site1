@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/sign up.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>
+      <div class="log">
+        <section class="input-content">
+          <div class="input">
+            <h1>Sign up</h1>
+            <input type="text" placeholder="Your Name" />
+            <input type="text" placeholder="User Name" required />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="phone"
+              required
+            />
+            <input type="email" placeholder="Enter Your E-mail" required />
+            <input type="password" placeholder="Password" required />
+            <input type="password" placeholder="Confirm Password" required />
+            <button><a href="/product.html">Sign UP</a></button>
+            <br />
+            <p>
+              <a href="sign in.html">you have an account</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      const signupButton = document.querySelector("button");
+      signupButton.addEventListener("click", function () {
+        const name = document.querySelector(
+          'input[placeholder="Your Name"]'
+        ).value;
+        const username = document.querySelector(
+          'input[placeholder="User Name"]'
+        ).value;
+        const phone = document.querySelector('input[name="phone"]').value;
+        const email = document.querySelector('input[type="email"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+        const confirmPassword = document.querySelectorAll(
+          'input[type="password"]'
+        )[1].value;
+
+        const payload = {
+          name: name,
+          username: username,
+          phone: phone,
+          email: email,
+          password: password,
+          confirmPassword: confirmPassword,
+        };
+
+        fetch("http://enactus01-001-site1.etempurl.com/api/User/Register", {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data))
+          .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>

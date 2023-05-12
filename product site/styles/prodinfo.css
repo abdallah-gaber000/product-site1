@@ -1,0 +1,146 @@
+@font-face {
+  font-family: CenturyGothicB;
+  src: url(../Fonts/GOTHICB.TTF);
+}
+
+@font-face {
+  font-family: CenturyGothic;
+  src: url(../Fonts/GOTHIC.TTF);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#navigation-bar {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#navigation-bar li {
+  list-style: none;
+  padding: 12px;
+  margin: 4px;
+}
+
+#navigation-bar a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+  padding: 10px;
+}
+
+/* #navigation-bar a:hover {
+    background-color: #fec223;
+    border-radius: 5px;
+} */
+
+.fixed {
+  position: fixed !important;
+  top: 0 !important;
+}
+
+#navigation-bar .active:hover {
+  background-color: #fec223;
+}
+
+@media only screen and (max-width: 992px) {
+  .footer-text {
+    font-size: 18px;
+    font-family: CenturyGothic;
+  }
+}
+
+.first {
+  margin-top: 50px;
+  /* border: 1px solid red; */
+}
+
+.first h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.first-one {
+  /* border: 1px solid green; */
+  width: 100%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text-first {
+  width: 40%;
+  margin-top: 4%;
+}
+
+.first-one img {
+  border-radius: 10px;
+  width: 30%;
+  /* margin-left: 5%; */
+}
+#showinfo {
+  width: 20%;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.second {
+  /* border: 1px solid red; */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.second h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.flex1 {
+  margin-top: 50px;
+  /* border: 1px solid green; */
+  /* width: 100%;
+    height: 50vh; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex1 img {
+  width: 100%;
+  height: 40vh;
+  width: 25%;
+  border-radius: 10px;
+}
+
+.flex2 {
+  margin-top: 50px;
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex2 img {
+  height: 50vh;
+  width: 25%;
+  border-radius: 10px;
+}
+
+.footer {
+  color: white;
+  font-family: CenturyGothic;
+}
+
+.footer .row {
+  display: flex;
+  /* text-align: center; */
+  justify-content: space-between;
+}
